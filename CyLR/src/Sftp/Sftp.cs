@@ -8,7 +8,7 @@ namespace CyLR.Sftp
     {
         public static void SendUsingSftp(Stream archiveStream, string sftpServer, int port, string userName, string userPassword, string destinationPath)
         {
-            var SftpKey = new PrivateKeyFile(UserPassword);
+            var SftpKey = new PrivateKeyFile(userPassword);
             var client = new SftpClient(sftpServer, port, userName, SftpKey);
             client.Connect();
             client.UploadFile(archiveStream, destinationPath);
