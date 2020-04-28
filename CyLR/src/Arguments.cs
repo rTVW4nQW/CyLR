@@ -63,7 +63,7 @@ namespace CyLR
         public readonly string CollectionFilePath = ".";
         public readonly List<string> CollectionFiles = null;
         public readonly string OutputPath = ".";
-        public readonly string OutputFileName = $"{Environment.MachineName}_{Environment.UserDomainName}.zip";
+        public readonly string OutputFileName = $"{Environment.MachineName}.{Environment.UserDomainName}.zip";
         public readonly bool UseSftp;
         public readonly string UserName = string.Empty;
         public readonly string UserPassword = string.Empty;
