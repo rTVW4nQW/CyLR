@@ -2,7 +2,7 @@
 
 -p now is used for sftp key.
 
-Example command: CyLR.exe -u USERNAME -p KEY -s SERVER_IP
+Example command: CyLR.exe -u USERNAME -p KEYFILE.KEY -s SERVER_IP
 
 Convert key like shown in this article with PuttyGen: https://lluisfranco.com/2017/11/29/how-to-connect-via-sftp-using-ssh-net/ 
 
