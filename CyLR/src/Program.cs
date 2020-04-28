@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -170,7 +170,9 @@ namespace CyLR
                 port = 22;
             }
 
-            var client = new SftpClient(server[0], port, arguments.UserName, arguments.UserPassword);
+            var SftpKey = new PrivateKeyFile(arguments.UserPassword);
+
+            var client = new SftpClient(server[0], port, arguments.UserName, SftpKey);
             client.Connect();
             return client;
         }
