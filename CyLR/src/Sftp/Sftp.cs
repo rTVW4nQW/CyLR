@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
 
@@ -8,7 +8,8 @@ namespace CyLR.Sftp
     {
         public static void SendUsingSftp(Stream archiveStream, string sftpServer, int port, string userName, string userPassword, string destinationPath)
         {
-            var client = new SftpClient(sftpServer, port, userName, userPassword);
+            var SftpKey = new PrivateKeyFile(arguments.UserPassword);
+            var client = new SftpClient(sftpServer, port, userName, SftpKey);
             client.Connect();
             client.UploadFile(archiveStream, destinationPath);
             client.Disconnect();
