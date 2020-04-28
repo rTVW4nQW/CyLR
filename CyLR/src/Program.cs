@@ -73,7 +73,7 @@ namespace CyLR
                     {
                         var client = CreateSftpClient(arguments);
                         //archiveStream = client.Create(outputPath);
-                        archiveStream = client.Open(outputPath, FileMode.CreateNew, FileAccess.ReadWrite);
+                        archiveStream = client.Open(outputPath, FileMode.Create, FileAccess.ReadWrite);
                     }
                     else
                     {
