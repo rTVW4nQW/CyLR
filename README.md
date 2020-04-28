@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/orlikoski/CyLR.svg?branch=master)](https://travis-ci.org/orlikoski/CyLR)  
 ## CyLR
 
 CyLR — Live Response Collection tool by Alan Orlikoski and Jason Yegge
