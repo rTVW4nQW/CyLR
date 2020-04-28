@@ -85,11 +85,10 @@ namespace CyLR
                     CreateArchive(arguments, archiveStream, paths);
                 }
                 var client = CreateSftpClient(arguments);
-                var outputPath = $@"{arguments.OutputPath}/{arguments.OutputFileName}";
                 stopwatch.Stop();
                 Console.WriteLine("Extraction complete. {0} elapsed", new TimeSpan(stopwatch.ElapsedTicks).ToString("g"));
                 Console.WriteLine("Uploading...");
-                client.UploadFile(outputPath,arguments.OutputFileName);
+                client.UploadFile(archiveStream,arguments.OutputFileName);
                 Console.WriteLine("Upload finished.");
             }
             catch (Exception e)
