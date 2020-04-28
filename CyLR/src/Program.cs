@@ -84,11 +84,16 @@ namespace CyLR
                 {
                     CreateArchive(arguments, archiveStream, paths);
                 }
+                var outputPath1 = $@"{arguments.OutputPath}/{arguments.OutputFileName}";
                 var client = CreateSftpClient(arguments);
                 stopwatch.Stop();
                 Console.WriteLine("Extraction complete. {0} elapsed", new TimeSpan(stopwatch.ElapsedTicks).ToString("g"));
                 Console.WriteLine("Uploading...");
-                client.UploadFile(archiveStream,arguments.OutputFileName);
+                
+                using (var zipfile = File.OpenRead(outputPath1))
+                {
+                    client.UploadFile(zipfile,arguments.OutputFileName);
+                }
                 Console.WriteLine("Upload finished.");
             }
             catch (Exception e)
