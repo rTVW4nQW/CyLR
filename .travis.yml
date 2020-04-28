@@ -24,5 +24,3 @@ deploy:
   name: Draft Release
   draft: true
   skip_cleanup: true
-  on:
-    tags: true
