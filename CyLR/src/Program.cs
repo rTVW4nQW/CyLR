@@ -72,7 +72,8 @@ namespace CyLR
                     if (arguments.UseSftp)
                     {
                         var client = CreateSftpClient(arguments);
-                        archiveStream = client.Create(outputPath);
+                        //archiveStream = client.Create(outputPath);
+                        archiveStream = OpenFileStream(outputPath);
                     }
                     else
                     {
@@ -86,6 +87,9 @@ namespace CyLR
 
                 stopwatch.Stop();
                 Console.WriteLine("Extraction complete. {0} elapsed", new TimeSpan(stopwatch.ElapsedTicks).ToString("g"));
+                Console.WriteLine("Uploading...");
+                client.UploadFile(outputPath,arguments.OutputFileName);
+                Console.WriteLine("Upload finished.");
             }
             catch (Exception e)
             {
