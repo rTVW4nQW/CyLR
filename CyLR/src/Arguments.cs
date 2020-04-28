@@ -28,7 +28,7 @@ namespace CyLR
             },
             {
                 "-p",
-                "SFTP password"
+                "SFTP Key"
             },
             {
                 "-s",
